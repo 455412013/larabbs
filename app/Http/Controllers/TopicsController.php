@@ -46,6 +46,7 @@ class TopicsController extends Controller
 
 	public function edit(Topic $topic)
 	{
+//       authorize方法和其他多种授权方法使用方法一致
         $this->authorize('update', $topic);
         $categories = Category::all();
 		return view('topics.create_and_edit', compact('topic','categories'));

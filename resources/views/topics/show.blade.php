@@ -43,15 +43,24 @@
                         {!! $topic->body !!}
                     </div>
 
-                    <div class="operate">
-                        <hr>
-                        <a href="{{ route('topics.edit', $topic->id) }}" class="btn btn-default btn-xs" role="button">
-                            <i class="glyphicon glyphicon-edit"></i> 编辑
-                        </a>
-                        <a href="#" class="btn btn-default btn-xs" role="button">
-                            <i class="glyphicon glyphicon-trash"></i> 删除
-                        </a>
-                    </div>
+                    {{--我们也需要对编辑和删除按钮增加显示条件，只有当用户有权限操作时才显示。我们可以很方便地利用 Laravel 授权策略提供的 @can Blade 命令，在 Blade 模板中做授权判断。因为我们的 update 和 destroy 的授权条件是一致的，故此处使用 update 的授权判断即可：--}}
+                    @can('update', $topic)
+                        <div class="operate">
+                            <hr>
+                            <a href="{{ route('topics.edit', $topic->id) }}" class="btn btn-default btn-xs pull-left" role="button">
+                                <i class="glyphicon glyphicon-edit"></i> 编辑
+                            </a>
+
+                            <form action="{{ route('topics.destroy', $topic->id) }}" method="post">
+                                {{ csrf_field() }}
+                                {{ method_field('DELETE') }}
+                                <button type="submit" class="btn btn-default btn-xs pull-left" style="margin-left: 6px">
+                                    <i class="glyphicon glyphicon-trash"></i>
+                                    删除
+                                </button>
+                            </form>
+                        </div>
+                    @endcan
 
                 </div>
             </div>
