@@ -33,8 +33,9 @@ Route::post('password/reset', 'Auth\ResetPasswordController@reset');
 
 Route::resource('users','UsersController',['only'=>['show','update','edit']]);
 
-Route::resource('topics', 'TopicsController', ['only' => ['index', 'show', 'create', 'store', 'update', 'edit', 'destroy']]);\
-
+Route::resource('topics', 'TopicsController', ['only' => ['index', 'create', 'store', 'update', 'edit', 'destroy']]);
+//隐式路由:Laravel 会自动解析定义在路由或控制器行为中与类型提示的变量名匹配的路由段名称的 Eloquent 模型
+Route::get('topics/{topic}/{slug?}', 'TopicsController@show')->name('topics.show');
 //话题分类
 Route::resource('categories',"CategoriesController",['only'=>['show']]);
 
