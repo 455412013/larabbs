@@ -81,13 +81,15 @@ body {
   .pagination {
     margin: 12px 0;
   }
+
+  .meta {
+    font-size: .9em;
+    color: #b3b3b3;
+  }
+  .reply-content {
+    margin: 6px 0;
+  }
 }
-
-
-
-
-
-
 
 
 
@@ -101,28 +103,7 @@ body {
   margin-bottom: 60px;
 }
 
-.footer {
-  position: absolute;
-  bottom: 0;
-  width: 100% ;
-  /* Set the fixed height of the footer here */
-  height: 60px;
-  background-color: #000;
 
-  .container {
-    padding-right: 15px;
-    padding-left: 15px;
-
-    p {
-      margin: 19px 0;
-      color: #c1c1c1;
-
-      a {
-        color: inherit;
-      }
-    }
-  }
-}
 
 
 /* Topic Index Page */
@@ -169,6 +150,50 @@ body {
       margin: 0.4em auto 0.6em;
       font-size: 28px;
       line-height: 38px;
+    }
+  }
+}
+
+.topic-reply {
+  hr {
+    margin-top: 16px;
+    margin-bottom: 16px;
+  }
+
+  a {
+    color: inherit;
+  }
+
+  .meta {
+    font-size: .9em;
+    color: #b3b3b3;
+  }
+}
+
+
+
+
+
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100% ;
+  /* Set the fixed height of the footer here */
+  height: 60px;
+  background-color: #000;
+
+  .container {
+    padding-right: 15px;
+    padding-left: 15px;
+
+    p {
+      margin: 19px 0;
+      color: #c1c1c1;
+
+      a {
+        color: inherit;
+      }
     }
   }
 }
