@@ -45,3 +45,5 @@ Route::post('upload_image', 'TopicsController@uploadImage')->name('topics.upload
 
 //话题回复
 Route::resource('replies', 'RepliesController', ['only' => [ 'store','destroy']]);
+
+Route::resource('notifications', 'NotificationsController', ['only' => ['index']]);
