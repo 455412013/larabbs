@@ -55,6 +55,16 @@
                         </a>
 
                         <ul class="dropdown-menu" role="menu">
+
+                            @can('manage_contents')
+                                <li>
+                                    <a href="{{ url(config('administrator.uri')) }}">
+                                        <span class="glyphicon glyphicon-dashboard" aria-hidden="true"></span>
+                                        管理后台
+                                    </a>
+                                </li>
+                            @endcan
+
                             <li>
 
                                 <a href="{{route('users.show',\Illuminate\Support\Facades\Auth::id())}}"><span class="glyphicon glyphicon-user" aria-hidden="true"></span>个人中心</a>
@@ -67,7 +77,8 @@
                                 <a href="{{ route('logout') }}"
                                    onclick="event.preventDefault();
                                              document.getElementById('logout-form').submit();">
-                                    退出登录
+                                    <span class="glyphicon glyphicon-log-out" aria-hidden="true"></span>退出登录
+
                                 </a>
 
                                 <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
