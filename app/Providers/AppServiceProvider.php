@@ -2,6 +2,8 @@
 
 namespace App\Providers;
 
+use App\Models\Topic;
+use App\Observers\LinkObserver;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Schema;
@@ -20,7 +22,9 @@ class AppServiceProvider extends ServiceProvider
 		\App\Models\User::observe(\App\Observers\UserObserver::class);
 		\App\Models\Reply::observe(\App\Observers\ReplyObserver::class);
 		\App\Models\Topic::observe(\App\Observers\TopicObserver::class);
+        \App\Models\Link::observe(\App\Observers\LinkObserver::class);
 
+        // Carbon 中文化配置
         Carbon::setlocale('zh');
         Schema::defaultStringLength(191);
         Horizon::auth(function ($request) {

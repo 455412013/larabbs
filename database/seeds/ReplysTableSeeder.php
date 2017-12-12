@@ -21,7 +21,7 @@ class ReplysTableSeeder extends Seeder
 
             // 话题 ID，同上
             $reply->topic_id = $faker->randomElement($topic_ids);
-            $reply->topic->increment('reply_count', 1);
+//            $reply->topic->increment('reply_count', 1);
         });
 
         Reply::insert($replys->toArray());
