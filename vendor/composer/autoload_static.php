@@ -476,6 +476,7 @@ class ComposerStaticInitcb2353a9193639611b1caeb79bc1dc1f
         'App\\Models\\Traits\\ActiveUserHelper' => __DIR__ . '/../..' . '/app/Models/Traits/ActiveUserHelper.php',
         'App\\Models\\User' => __DIR__ . '/../..' . '/app/Models/User.php',
         'App\\Notifications\\TopicReplied' => __DIR__ . '/../..' . '/app/Notifications/TopicReplied.php',
+        'App\\Observers\\LinkObserver' => __DIR__ . '/../..' . '/app/Observers/LinkObserver.php',
         'App\\Observers\\ReplyObserver' => __DIR__ . '/../..' . '/app/Observers/ReplyObserver.php',
         'App\\Observers\\TopicObserver' => __DIR__ . '/../..' . '/app/Observers/TopicObserver.php',
         'App\\Observers\\UserObserver' => __DIR__ . '/../..' . '/app/Observers/UserObserver.php',
