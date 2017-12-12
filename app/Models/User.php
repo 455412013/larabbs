@@ -14,6 +14,7 @@ class User extends Authenticatable
     }
     //此举能让我们获取到扩展包提供的所有权限和角色的操作方法。
     use HasRoles;
+    use Traits\ActiveUserHelper;
 
 
     public function notify($instance)
